@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>SpaceFarm Risk Copilot - Arquitetura</title>
+  <style>
+    body { margin: 0; background: #f6f8fb; font-family: Arial, sans-serif; color: #17202a; }
+    .wrap { max-width: 1100px; margin: 32px auto; padding: 24px; }
+    h1 { font-size: 28px; margin: 0 0 8px; }
+    p { margin: 0 0 24px; color: #4d5b6a; }
+    svg { width: 100%; height: auto; background: #ffffff; border: 1px solid #d9e1ea; }
+    .box { fill: #ffffff; stroke: #455a64; stroke-width: 1.6; }
+    .input { fill: #e8f4fd; }
+    .process { fill: #edf7ed; }
+    .model { fill: #fff3df; }
+    .output { fill: #f2ecff; }
+    .future { fill: #f7f7f7; stroke-dasharray: 6 4; }
+    .title { font-size: 16px; font-weight: 700; }
+    .small { font-size: 13px; fill: #4d5b6a; }
+    .arrow { stroke: #455a64; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SpaceFarm Risk Copilot</h1>
+    <p>Fluxo da POC: dados climaticos/espaciais entram no pipeline, viram risco agricola e geram decisao operacional.</p>
+    <svg viewBox="0 0 1060 560" role="img" aria-label="Arquitetura do SpaceFarm Risk Copilot">
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L0,6 L9,3 z" fill="#455a64"></path>
+        </marker>
+      </defs>
+
+      <path class="arrow" d="M190 170 H290"></path>
+      <path class="arrow" d="M430 170 H530"></path>
+      <path class="arrow" d="M670 170 H770"></path>
+      <path class="arrow" d="M850 230 V315"></path>
+      <path class="arrow" d="M610 400 H470"></path>
+      <path class="arrow" d="M280 400 H380"></path>
+
+      <rect class="box input" x="40" y="105" width="150" height="130" rx="8"></rect>
+      <text class="title" x="65" y="145">Dados</text>
+      <text class="small" x="65" y="172">clima, solo,</text>
+      <text class="small" x="65" y="194">radiacao, vento</text>
+
+      <rect class="box process" x="290" y="105" width="140" height="130" rx="8"></rect>
+      <text class="title" x="315" y="145">Pipeline</text>
+      <text class="small" x="315" y="172">limpeza e</text>
+      <text class="small" x="315" y="194">indice de risco</text>
+
+      <rect class="box model" x="530" y="105" width="140" height="130" rx="8"></rect>
+      <text class="title" x="555" y="145">ML</text>
+      <text class="small" x="555" y="172">classificacao</text>
+      <text class="small" x="555" y="194">baixo/medio/alto</text>
+
+      <rect class="box output" x="770" y="105" width="170" height="130" rx="8"></rect>
+      <text class="title" x="795" y="145">Dashboard</text>
+      <text class="small" x="795" y="172">graficos, score</text>
+      <text class="small" x="795" y="194">e recomendacao</text>
+
+      <rect class="box output" x="690" y="315" width="220" height="120" rx="8"></rect>
+      <text class="title" x="725" y="355">Alerta operacional</text>
+      <text class="small" x="725" y="382">e-mail/SMS simulado</text>
+      <text class="small" x="725" y="404">via camada AWS futura</text>
+
+      <rect class="box future" x="120" y="315" width="160" height="120" rx="8"></rect>
+      <text class="title" x="145" y="355">Evolucao</text>
+      <text class="small" x="145" y="382">satelite/API</text>
+      <text class="small" x="145" y="404">+ sensores IoT</text>
+
+      <rect class="box future" x="380" y="315" width="170" height="120" rx="8"></rect>
+      <text class="title" x="408" y="355">Nuvem</text>
+      <text class="small" x="408" y="382">Lambda + S3</text>
+      <text class="small" x="408" y="404">+ SNS</text>
+    </svg>
+  </div>
+</body>
+</html>
+
