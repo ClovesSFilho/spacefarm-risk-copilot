@@ -8,115 +8,98 @@
     body {
       font-family: Arial, sans-serif;
       color: #17202a;
-      line-height: 1.48;
+      line-height: 1.45;
       margin: 0;
-      background: #ffffff;
+      background: #fff;
     }
-    h1 { font-size: 30px; margin: 0 0 8px; }
-    h2 { font-size: 18px; margin: 26px 0 8px; border-bottom: 1px solid #d8dee6; padding-bottom: 4px; }
-    h3 { font-size: 15px; margin: 18px 0 6px; }
-    p, li { font-size: 12.5px; }
-    code, pre { font-family: Consolas, monospace; font-size: 11px; }
-    pre { background: #f5f7fa; border: 1px solid #d8dee6; padding: 10px; white-space: pre-wrap; }
-    .cover { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; }
-    .subtitle { color: #4d5b6a; font-size: 15px; max-width: 620px; }
-    .meta { margin-top: 38px; border-left: 4px solid #2f6f73; padding-left: 14px; }
-    .pill { display: inline-block; background: #e8f4fd; padding: 4px 8px; margin: 2px; border-radius: 4px; font-size: 11px; }
-    .page-break { page-break-before: always; }
-    .diagram { border: 1px solid #d8dee6; padding: 12px; margin: 12px 0; }
-    svg { width: 100%; height: auto; }
-    .box { fill: #ffffff; stroke: #455a64; stroke-width: 1.6; }
-    .input { fill: #e8f4fd; }
-    .process { fill: #edf7ed; }
-    .model { fill: #fff3df; }
-    .output { fill: #f2ecff; }
-    .future { fill: #f7f7f7; stroke-dasharray: 6 4; }
-    .title { font-size: 16px; font-weight: 700; }
-    .small { font-size: 13px; fill: #4d5b6a; }
-    .arrow { stroke: #455a64; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    h1 { font-size: 26px; margin: 0 0 6px; }
+    h2 { font-size: 16px; margin: 20px 0 6px; border-bottom: 1px solid #d8dee6; padding-bottom: 3px; }
+    p, li { font-size: 12px; }
+    ul, ol { margin-top: 6px; }
+    pre {
+      font-family: Consolas, monospace;
+      font-size: 10.5px;
+      background: #f6f8fa;
+      border: 1px solid #d8dee6;
+      padding: 8px;
+      white-space: pre-wrap;
+    }
+    .meta {
+      border-left: 4px solid #2f6f73;
+      padding-left: 12px;
+      margin: 12px 0 18px;
+    }
+    .box {
+      border: 1px solid #d8dee6;
+      padding: 10px;
+      margin: 8px 0;
+      background: #fafafa;
+    }
+    .small { color: #52606d; }
   </style>
 </head>
 <body>
-  <section class="cover">
-    <h1>SpaceFarm Risk Copilot</h1>
-    <p class="subtitle">IA para monitoramento agrícola orientado por dados climáticos e espaciais</p>
-    <div class="meta">
-      <p><strong>Aluno:</strong> Cloves Silva Filho</p>
-      <p><strong>RM:</strong> 567250</p>
-      <p><strong>Curso:</strong> Inteligência Artificial - FIAP</p>
-      <p><strong>Atividade:</strong> Substitutiva Global Solution 2026.1</p>
-    </div>
-  </section>
+  <h1>SpaceFarm Risk Copilot</h1>
+  <p class="small">IA para monitoramento agrícola orientado por dados climáticos e espaciais</p>
 
-  <section class="page-break">
-    <h2>1. Introdução</h2>
-    <p>A exploração espacial deixou de ser apenas uma área científica distante. Satélites, sensores orbitais e infraestrutura de comunicação já apoiam previsão climática, monitoramento ambiental, agricultura, prevenção de desastres e análise de grandes volumes de dados.</p>
-    <p>Este projeto responde à pergunta: como a Inteligência Artificial e as tecnologias digitais podem transformar a nova economia espacial e gerar impacto positivo na Terra?</p>
+  <div class="meta">
+    <p><strong>Aluno:</strong> Cloves Silva Filho</p>
+    <p><strong>RM:</strong> 567250</p>
+    <p><strong>Curso:</strong> Inteligência Artificial - FIAP</p>
+    <p><strong>Atividade:</strong> Substitutiva Global Solution 2026.1</p>
+  </div>
 
-    <h2>2. Problema</h2>
-    <p>O setor agrícola depende diretamente de condições climáticas. Temperatura alta, baixa umidade do solo, ausência de chuva, vento e radiação solar intensa podem reduzir produtividade e aumentar desperdícios. O problema não é apenas coletar dados: o desafio é transformar dados em decisão compreensível e acionável.</p>
+  <h2>1. Introdução</h2>
+  <p>Este projeto apresenta uma POC de Inteligência Artificial aplicada à nova economia espacial. A ideia é mostrar como dados climáticos e espaciais podem apoiar decisões agrícolas na Terra.</p>
 
-    <h2>3. Proposta da solução</h2>
-    <p>O SpaceFarm Risk Copilot é uma prova de conceito de IA que transforma dados climáticos e espaciais em um índice de risco agrícola. A solução lê dados de uma fazenda, calcula um score de risco, classifica esse risco com Machine Learning e recomenda uma ação operacional.</p>
-    <p>
-      <span class="pill">Python</span>
-      <span class="pill">Streamlit</span>
-      <span class="pill">Machine Learning</span>
-      <span class="pill">Dados climáticos</span>
-      <span class="pill">Arquitetura AWS futura</span>
-    </p>
+  <h2>2. Problema</h2>
+  <p>A agricultura depende de fatores como temperatura, chuva, umidade do solo, vento e radiação solar. Quando esses dados não são transformados em decisão prática, o produtor pode demorar para agir diante de risco de seca, calor extremo ou baixa umidade.</p>
 
-    <h2>4. Arquitetura</h2>
-    <div class="diagram">
-      <svg viewBox="0 0 1060 500" role="img" aria-label="Arquitetura do SpaceFarm Risk Copilot">
-        <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#455a64"></path></marker></defs>
-        <path class="arrow" d="M190 150 H290"></path><path class="arrow" d="M430 150 H530"></path><path class="arrow" d="M670 150 H770"></path><path class="arrow" d="M850 210 V295"></path><path class="arrow" d="M610 380 H470"></path><path class="arrow" d="M280 380 H380"></path>
-        <rect class="box input" x="40" y="85" width="150" height="130" rx="8"></rect><text class="title" x="65" y="125">Dados</text><text class="small" x="65" y="152">clima, solo,</text><text class="small" x="65" y="174">radiação, vento</text>
-        <rect class="box process" x="290" y="85" width="140" height="130" rx="8"></rect><text class="title" x="315" y="125">Pipeline</text><text class="small" x="315" y="152">limpeza e</text><text class="small" x="315" y="174">índice de risco</text>
-        <rect class="box model" x="530" y="85" width="140" height="130" rx="8"></rect><text class="title" x="555" y="125">ML</text><text class="small" x="555" y="152">classificação</text><text class="small" x="555" y="174">baixo/médio/alto</text>
-        <rect class="box output" x="770" y="85" width="170" height="130" rx="8"></rect><text class="title" x="795" y="125">Dashboard</text><text class="small" x="795" y="152">gráficos, score</text><text class="small" x="795" y="174">e recomendação</text>
-        <rect class="box output" x="690" y="295" width="220" height="120" rx="8"></rect><text class="title" x="725" y="335">Alerta operacional</text><text class="small" x="725" y="362">e-mail/SMS simulado</text><text class="small" x="725" y="384">via camada AWS futura</text>
-        <rect class="box future" x="120" y="295" width="160" height="120" rx="8"></rect><text class="title" x="145" y="335">Evolução</text><text class="small" x="145" y="362">satélite/API</text><text class="small" x="145" y="384">+ sensores IoT</text>
-        <rect class="box future" x="380" y="295" width="170" height="120" rx="8"></rect><text class="title" x="408" y="335">Nuvem</text><text class="small" x="408" y="362">Lambda + S3</text><text class="small" x="408" y="384">+ SNS</text>
-      </svg>
-    </div>
-  </section>
+  <h2>3. Solução</h2>
+  <p>O SpaceFarm Risk Copilot lê dados climáticos de uma fazenda, calcula um índice de risco agrícola, classifica o risco com Machine Learning e apresenta uma recomendação operacional em um dashboard.</p>
+  <p><strong>Tecnologias:</strong> Python, Streamlit, Pandas, Scikit-learn e Plotly.</p>
 
-  <section class="page-break">
-    <h2>5. Desenvolvimento</h2>
-    <p>O projeto foi desenvolvido em Python com Streamlit, Pandas, Scikit-learn e Plotly. O índice combina temperatura, umidade do solo, déficit de chuva, radiação solar e vento.</p>
-    <h3>Motor de risco</h3>
-    <pre>weighted_score = (
+  <h2>4. Arquitetura</h2>
+  <div class="box">
+    Dados climáticos/espaciais → Pipeline Python → Índice de risco → Modelo de ML → Dashboard → Recomendação/alerta
+  </div>
+  <p>Em uma versão futura, os dados poderiam vir de APIs climáticas, sensores IoT ou produtos de satélite, com alertas enviados por serviços de nuvem como AWS Lambda e SNS.</p>
+
+  <h2>5. Desenvolvimento</h2>
+  <p>O motor de risco combina temperatura, umidade do solo, chuva, radiação solar e vento. Cada variável contribui para um score final de 0 a 100.</p>
+
+  <p><strong>Trecho principal do cálculo:</strong></p>
+  <pre>weighted_score = (
     heat * 0.26
     + drought * 0.28
     + rain_deficit * 0.18
     + radiation * 0.16
     + wind * 0.12
 ) * 100</pre>
-    <h3>Modelo de Machine Learning</h3>
-    <pre>model = RandomForestClassifier(n_estimators=120, random_state=42, max_depth=4)
+
+  <p><strong>Modelo de Machine Learning:</strong></p>
+  <pre>model = RandomForestClassifier(n_estimators=120, random_state=42, max_depth=4)
 model.fit(data[FEATURES], data["risk_level"])</pre>
-    <h3>Recomendação automática</h3>
-    <pre>if risk_level == "Alto" and soil < 25 and temp >= 34:
-    return "Acionar irrigação prioritária e enviar alerta técnico."</pre>
 
-    <h2>6. Resultados esperados</h2>
-    <ul>
-      <li>Dashboard com indicadores de risco.</li>
-      <li>Gráfico de evolução do índice.</li>
-      <li>Tabela de dados monitorados.</li>
-      <li>Recomendação operacional baseada no risco.</li>
-      <li>Alerta simulado para equipe da fazenda.</li>
-    </ul>
+  <p><strong>Recomendação gerada em cenário de risco alto:</strong></p>
+  <pre>return "Acionar irrigação prioritária e enviar alerta técnico."</pre>
 
-    <h2>7. Limitações</h2>
-    <p>O projeto usa um dataset simplificado para manter a execução viável dentro do prazo acadêmico. A solução não substitui uma plataforma agrícola profissional; ela demonstra como IA, dados climáticos, arquitetura em nuvem e automação podem ser combinados para resolver um problema real.</p>
+  <h2>6. Resultados Esperados</h2>
+  <ul>
+    <li>Dashboard com indicadores de risco.</li>
+    <li>Gráfico de evolução do índice.</li>
+    <li>Tabela com dados monitorados.</li>
+    <li>Classificação do risco em baixo, médio ou alto.</li>
+    <li>Recomendação operacional e alerta simulado.</li>
+  </ul>
 
-    <h2>8. Conclusão</h2>
-    <p>O SpaceFarm Risk Copilot mostra como a nova economia espacial pode gerar impacto positivo na Terra. Dados que antes ficavam restritos à observação técnica podem virar apoio direto para sustentabilidade, produtividade e prevenção de perdas.</p>
+  <h2>7. Limitações</h2>
+  <p>O projeto usa um dataset simplificado para ser viável no prazo da atividade. Ele não substitui uma solução agrícola profissional. O objetivo é demonstrar, de forma funcional, como IA, dados climáticos e dashboard podem apoiar uma decisão real.</p>
 
-    <h2>9. Links</h2>
-    <p><strong>Repositório GitHub:</strong> https://github.com/ClovesSFilho/spacefarm-risk-copilot</p>
-  </section>
+  <h2>8. Conclusão</h2>
+  <p>O SpaceFarm Risk Copilot mostra como tecnologias digitais e dados ligados à economia espacial podem gerar impacto positivo na Terra. Mesmo em formato de POC, a solução demonstra uma aplicação prática de IA para agricultura, prevenção de perdas e tomada de decisão.</p>
+
+  <h2>9. Link</h2>
+  <p><strong>Repositório GitHub:</strong> https://github.com/ClovesSFilho/spacefarm-risk-copilot</p>
 </body>
 </html>
