@@ -4,38 +4,28 @@
   <meta charset="utf-8">
   <title>SpaceFarm Risk Copilot - SubGS</title>
   <style>
-    @page { size: A4; margin: 18mm; }
+    @page { size: A4; margin: 14mm; }
     body {
       font-family: Arial, sans-serif;
-      color: #17202a;
-      line-height: 1.45;
+      color: #111;
+      line-height: 1.25;
       margin: 0;
       background: #fff;
     }
-    h1 { font-size: 26px; margin: 0 0 6px; }
-    h2 { font-size: 16px; margin: 20px 0 6px; border-bottom: 1px solid #d8dee6; padding-bottom: 3px; }
-    p, li { font-size: 12px; }
-    ul, ol { margin-top: 6px; }
+    h1 { font-size: 19px; margin: 0 0 5px; font-weight: 700; }
+    h2 { font-size: 12.5px; margin: 11px 0 3px; font-weight: 700; }
+    p, li { font-size: 10.8px; }
+    ul, ol { margin-top: 4px; }
     pre {
       font-family: Consolas, monospace;
-      font-size: 10.5px;
-      background: #f6f8fa;
-      border: 1px solid #d8dee6;
-      padding: 8px;
+      font-size: 9.4px;
+      margin: 3px 0 6px 0;
       white-space: pre-wrap;
     }
-    .meta {
-      border-left: 4px solid #2f6f73;
-      padding-left: 12px;
-      margin: 12px 0 18px;
-    }
-    .box {
-      border: 1px solid #d8dee6;
-      padding: 10px;
-      margin: 8px 0;
-      background: #fafafa;
-    }
-    .small { color: #52606d; }
+    .meta { margin: 8px 0 11px; }
+    .meta p { margin: 3px 0; }
+    .flow { margin: 4px 0; font-size: 10.8px; }
+    .small { color: #333; }
   </style>
 </head>
 <body>
@@ -50,23 +40,23 @@
   </div>
 
   <h2>1. Introdução</h2>
-  <p>Este projeto apresenta uma POC de Inteligência Artificial aplicada à nova economia espacial. A ideia é mostrar como dados climáticos e espaciais podem apoiar decisões agrícolas na Terra.</p>
+  <p>Este projeto apresenta uma POC de Inteligência Artificial aplicada à nova economia espacial. A ideia é usar dados climáticos e espaciais para apoiar decisões agrícolas na Terra.</p>
 
   <h2>2. Problema</h2>
-  <p>A agricultura depende de fatores como temperatura, chuva, umidade do solo, vento e radiação solar. Quando esses dados não são transformados em decisão prática, o produtor pode demorar para agir diante de risco de seca, calor extremo ou baixa umidade.</p>
+  <p>A agricultura depende de temperatura, chuva, umidade do solo, vento e radiação solar. O problema é transformar esses dados em decisão prática antes que o risco gere perda.</p>
 
   <h2>3. Solução</h2>
-  <p>O SpaceFarm Risk Copilot lê dados climáticos de uma fazenda, calcula um índice de risco agrícola, classifica o risco com Machine Learning e apresenta uma recomendação operacional em um dashboard.</p>
+  <p>O SpaceFarm Risk Copilot lê dados climáticos, calcula um índice de risco agrícola, classifica o risco com Machine Learning e apresenta uma recomendação em um dashboard.</p>
   <p><strong>Tecnologias:</strong> Python, Streamlit, Pandas, Scikit-learn e Plotly.</p>
 
   <h2>4. Arquitetura</h2>
-  <div class="box">
+  <p class="flow">
     Dados climáticos/espaciais → Pipeline Python → Índice de risco → Modelo de ML → Dashboard → Recomendação/alerta
-  </div>
-  <p>Em uma versão futura, os dados poderiam vir de APIs climáticas, sensores IoT ou produtos de satélite, com alertas enviados por serviços de nuvem como AWS Lambda e SNS.</p>
+  </p>
+  <p>Em uma versão futura, os dados poderiam vir de APIs climáticas, sensores IoT ou produtos de satélite.</p>
 
   <h2>5. Desenvolvimento</h2>
-  <p>O motor de risco combina temperatura, umidade do solo, chuva, radiação solar e vento. Cada variável contribui para um score final de 0 a 100.</p>
+  <p>O motor de risco combina temperatura, umidade do solo, chuva, radiação solar e vento em um score de 0 a 100.</p>
 
   <p><strong>Trecho principal do cálculo:</strong></p>
   <pre>weighted_score = (
@@ -94,10 +84,10 @@ model.fit(data[FEATURES], data["risk_level"])</pre>
   </ul>
 
   <h2>7. Limitações</h2>
-  <p>O projeto usa um dataset simplificado para ser viável no prazo da atividade. Ele não substitui uma solução agrícola profissional. O objetivo é demonstrar, de forma funcional, como IA, dados climáticos e dashboard podem apoiar uma decisão real.</p>
+  <p>O projeto usa um dataset simplificado para ser viável no prazo da atividade. Ele não substitui uma solução agrícola profissional; demonstra uma aplicação funcional de IA e dados climáticos.</p>
 
   <h2>8. Conclusão</h2>
-  <p>O SpaceFarm Risk Copilot mostra como tecnologias digitais e dados ligados à economia espacial podem gerar impacto positivo na Terra. Mesmo em formato de POC, a solução demonstra uma aplicação prática de IA para agricultura, prevenção de perdas e tomada de decisão.</p>
+  <p>O SpaceFarm Risk Copilot mostra como dados ligados à economia espacial podem gerar impacto positivo na Terra, especialmente na agricultura e na prevenção de perdas.</p>
 
   <h2>9. Link</h2>
   <p><strong>Repositório GitHub:</strong> https://github.com/ClovesSFilho/spacefarm-risk-copilot</p>

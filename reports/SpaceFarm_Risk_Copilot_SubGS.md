@@ -7,15 +7,15 @@
 
 ## 1. Introdução
 
-Este projeto apresenta uma POC de Inteligência Artificial aplicada à nova economia espacial. A ideia é mostrar como dados climáticos e espaciais podem apoiar decisões agrícolas na Terra.
+Este projeto apresenta uma POC de Inteligência Artificial aplicada à nova economia espacial. A ideia é usar dados climáticos e espaciais para apoiar decisões agrícolas na Terra.
 
 ## 2. Problema
 
-A agricultura depende de fatores como temperatura, chuva, umidade do solo, vento e radiação solar. Quando esses dados não são transformados em decisão prática, o produtor pode demorar para agir diante de risco de seca, calor extremo ou baixa umidade.
+A agricultura depende de temperatura, chuva, umidade do solo, vento e radiação solar. O problema é transformar esses dados em decisão prática antes que o risco gere perda.
 
 ## 3. Solução
 
-O SpaceFarm Risk Copilot lê dados climáticos de uma fazenda, calcula um índice de risco agrícola, classifica o risco com Machine Learning e apresenta uma recomendação operacional em um dashboard.
+O SpaceFarm Risk Copilot lê dados climáticos, calcula um índice de risco agrícola, classifica o risco com Machine Learning e apresenta uma recomendação em um dashboard.
 
 Tecnologias usadas:
 
@@ -36,11 +36,11 @@ Fluxo da solução:
 5. Exibição em dashboard.
 6. Geração de recomendação e alerta simulado.
 
-Em uma versão futura, os dados poderiam vir de APIs climáticas, sensores IoT ou produtos de satélite, com alertas enviados por serviços de nuvem como AWS Lambda e SNS.
+Em uma versão futura, os dados poderiam vir de APIs climáticas, sensores IoT ou produtos de satélite.
 
 ## 5. Desenvolvimento
 
-O motor de risco combina temperatura, umidade do solo, chuva, radiação solar e vento. Cada variável contribui para um score final de 0 a 100.
+O motor de risco combina temperatura, umidade do solo, chuva, radiação solar e vento em um score de 0 a 100.
 
 Trecho principal do cálculo:
 
@@ -80,11 +80,11 @@ A POC entrega:
 
 ## 7. Limitações
 
-O projeto usa um dataset simplificado para ser viável no prazo da atividade. Ele não substitui uma solução agrícola profissional. O objetivo é demonstrar, de forma funcional, como IA, dados climáticos e dashboard podem apoiar uma decisão real.
+O projeto usa um dataset simplificado para ser viável no prazo da atividade. Ele não substitui uma solução agrícola profissional; demonstra uma aplicação funcional de IA e dados climáticos.
 
 ## 8. Conclusão
 
-O SpaceFarm Risk Copilot mostra como tecnologias digitais e dados ligados à economia espacial podem gerar impacto positivo na Terra. Mesmo em formato de POC, a solução demonstra uma aplicação prática de IA para agricultura, prevenção de perdas e tomada de decisão.
+O SpaceFarm Risk Copilot mostra como dados ligados à economia espacial podem gerar impacto positivo na Terra, especialmente na agricultura e na prevenção de perdas.
 
 ## 9. Link
 
