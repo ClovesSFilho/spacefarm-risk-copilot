@@ -14,7 +14,7 @@ def classify_score(score: float) -> str:
     if score >= 70:
         return "Alto"
     if score >= 40:
-        return "Medio"
+        return "Médio"
     return "Baixo"
 
 
@@ -48,4 +48,3 @@ def enrich_with_risk(data: pd.DataFrame) -> pd.DataFrame:
     enriched["risk_score"] = enriched.apply(calculate_risk_score, axis=1)
     enriched["risk_level"] = enriched["risk_score"].apply(classify_score)
     return enriched
-

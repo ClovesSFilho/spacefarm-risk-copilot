@@ -1,30 +1,40 @@
 # SpaceFarm Risk Copilot
 
-POC de Inteligencia Artificial para monitoramento agricola orientado por dados climaticos e espaciais.
+POC de Inteligência Artificial para monitoramento agrícola orientado por dados climáticos e espaciais.
 
-## Proposta
+## Sobre o Projeto
 
-A economia espacial ja influencia a vida na Terra por meio de satelites, previsao climatica, monitoramento ambiental e analise de grandes volumes de dados. O SpaceFarm Risk Copilot demonstra como esses dados podem apoiar a agricultura: o sistema calcula um indice de risco para uma fazenda, classifica a situacao com Machine Learning e recomenda uma acao operacional.
+Este projeto foi desenvolvido para a Atividade Substitutiva Global Solution 2026.1 da FIAP, no curso de Inteligência Artificial. A proposta responde ao desafio:
+
+> Como a Inteligência Artificial e as tecnologias digitais podem transformar a nova economia espacial e gerar impacto positivo na Terra?
+
+O SpaceFarm Risk Copilot demonstra como dados climáticos, sensores e informações derivadas de observação espacial podem apoiar decisões agrícolas. A aplicação calcula um índice de risco para uma fazenda, classifica a situação com Machine Learning e recomenda uma ação operacional.
+
+## Integrante
+
+- Cloves Silva Filho - RM 567250
 
 ## Problema
 
-Produtores rurais lidam com variacoes de temperatura, chuva, radiacao solar, vento e umidade do solo. Essas informacoes existem, mas muitas vezes chegam de forma fragmentada e dificil de transformar em decisao. A proposta e criar uma camada simples de inteligencia que transforma dados em alerta pratico.
+Produtores rurais lidam com variações de temperatura, chuva, radiação solar, vento e umidade do solo. Essas informações existem, mas muitas vezes chegam de forma fragmentada e difícil de transformar em decisão prática.
 
-## Solucao
+A proposta é criar uma camada simples de inteligência que transforma dados ambientais em leitura de risco, recomendação e alerta.
+
+## Solução
 
 O projeto entrega um dashboard em Python que:
 
-- le dados climaticos em CSV;
-- calcula um indice de risco agricola;
-- usa um classificador de Machine Learning para prever o nivel de risco;
-- apresenta graficos e indicadores em uma interface Streamlit;
-- gera recomendacoes automaticas;
-- simula um alerta que poderia ser integrado a AWS SNS/Lambda.
+- lê dados climáticos em CSV;
+- calcula um índice de risco agrícola;
+- usa um classificador de Machine Learning para prever o nível de risco;
+- apresenta gráficos e indicadores em uma interface Streamlit;
+- gera recomendações automáticas;
+- simula um alerta que poderia ser integrado à AWS SNS/Lambda.
 
 ## Arquitetura
 
 ```text
-Dados climaticos/espaciais
+Dados climáticos/espaciais
         |
         v
 Pipeline Python + motor de risco
@@ -36,12 +46,12 @@ Modelo de Machine Learning
 Dashboard Streamlit
         |
         v
-Recomendacao + alerta operacional
+Recomendação + alerta operacional
 ```
 
-Em uma versao produtiva, os dados locais poderiam ser substituidos por APIs meteorologicas, sensores IoT, imagens orbitais ou produtos de satelite. A camada de alerta poderia usar AWS Lambda e SNS.
+Em uma versão produtiva, os dados locais poderiam ser substituídos por APIs meteorológicas, sensores IoT, imagens orbitais ou produtos de satélite. A camada de alerta poderia usar AWS Lambda e SNS.
 
-## Tecnologias
+## Tecnologias Utilizadas
 
 - Python
 - Streamlit
@@ -49,16 +59,7 @@ Em uma versao produtiva, os dados locais poderiam ser substituidos por APIs mete
 - Scikit-learn
 - Plotly
 
-## Como executar
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-## Estrutura
+## Estrutura de Pastas
 
 ```text
 spacefarm-risk-copilot/
@@ -68,31 +69,54 @@ spacefarm-risk-copilot/
 │   └── README.md
 ├── docs/
 │   ├── architecture.html
-│   └── screenshots/
+│   └── README.md
 ├── reports/
-│   └── SpaceFarm_Risk_Copilot_SubGS.md
+│   ├── SpaceFarm_Risk_Copilot_SubGS.md
+│   ├── SpaceFarm_Risk_Copilot_SubGS.html
+│   ├── SpaceFarm_Risk_Copilot_SubGS.pdf
+│   └── README.md
 ├── src/
 │   ├── alert_service.py
 │   ├── model.py
 │   ├── recommendations.py
-│   └── risk_engine.py
+│   ├── risk_engine.py
+│   └── README.md
 └── requirements.txt
 ```
 
-## Entregaveis
+## Como Executar o Código
 
-- Repositorio GitHub com codigo e documentacao.
-- PDF unico com introducao, desenvolvimento, resultados esperados e conclusao.
-- Video demonstrativo de ate 5 minutos, publicado como nao listado no YouTube.
+Pré-requisitos:
 
-## Limitacoes
+- Python 3.10 ou superior
+- `pip`
 
-Esta POC usa dados simplificados para manter a execucao viavel em contexto academico. O objetivo nao e substituir uma plataforma agricola profissional, mas demonstrar de forma funcional como IA, dados climaticos, automacao e arquitetura em nuvem podem ser combinados para resolver um problema real.
+Passo a passo:
 
-## Proximos passos
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-- Conectar uma API climatica real.
-- Adicionar imagens orbitais ou indices de vegetacao.
+Depois de executar o comando, o Streamlit abrirá o dashboard no navegador.
+
+## Links e Entregáveis
+
+- Repositório GitHub: https://github.com/ClovesSFilho/spacefarm-risk-copilot
+- Vídeo demonstrativo no YouTube: inserir link aqui
+- Relatório em PDF: `reports/SpaceFarm_Risk_Copilot_SubGS.pdf`
+
+## Decisões Técnicas
+
+O projeto usa dados simplificados para manter a execução viável em contexto acadêmico. O objetivo não é substituir uma plataforma agrícola profissional, mas demonstrar, de forma funcional, como IA, análise de dados, dashboard e arquitetura em nuvem podem ser combinados para resolver um problema real.
+
+O modelo escolhido foi Random Forest por ser simples de demonstrar, robusto para uma POC pequena e compatível com o nível de uma entrega acadêmica de primeiro ano.
+
+## Próximos Passos
+
+- Conectar uma API climática real.
+- Adicionar imagens orbitais ou índices de vegetação.
 - Integrar AWS SNS para envio real de alertas.
-- Registrar historico de fazendas e talhoes em banco de dados.
-
+- Registrar histórico de fazendas e talhões em banco de dados.

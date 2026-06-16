@@ -18,7 +18,7 @@ DEFAULT_DATA = BASE_DIR / "data" / "climate_sample.csv"
 
 st.set_page_config(
     page_title="SpaceFarm Risk Copilot",
-    page_icon="SF",
+    page_icon="🚜",
     layout="wide",
 )
 
@@ -34,12 +34,12 @@ def load_data(uploaded_file=None) -> pd.DataFrame:
 
 
 st.title("SpaceFarm Risk Copilot")
-st.caption("IA aplicada a dados climaticos e espaciais para antecipar risco agricola na Terra.")
+st.caption("IA aplicada a dados climáticos e espaciais para antecipar risco agrícola na Terra.")
 
 with st.sidebar:
     st.header("Entrada")
-    uploaded = st.file_uploader("Enviar CSV climatico", type=["csv"])
-    st.markdown("A demonstracao usa dados de exemplo de Campo Grande/MS.")
+    uploaded = st.file_uploader("Enviar CSV climático", type=["csv"])
+    st.markdown("A demonstração usa dados de exemplo de Campo Grande/MS.")
 
 data = load_data(uploaded)
 model = train_classifier(data)
@@ -49,9 +49,9 @@ prediction = predict_latest_risk(model, data)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Risco atual", decision["nivel"], f"score {latest['risk_score']}")
-col2.metric("Classificacao ML", prediction)
+col2.metric("Classificação ML", prediction)
 col3.metric("Umidade do solo", f"{latest['soil_moisture_pct']}%")
-col4.metric("Temperatura", f"{latest['temperature_c']} C")
+col4.metric("Temperatura", f"{latest['temperature_c']} °C")
 
 st.subheader("Leitura operacional")
 st.write(decision["justificativa"])
@@ -63,9 +63,9 @@ chart = px.line(
     y="risk_score",
     color="risk_level",
     markers=True,
-    title="Evolucao do indice de risco agricola",
+    title="Evolução do índice de risco agrícola",
 )
-chart.update_layout(xaxis_title="Data", yaxis_title="Indice de risco")
+chart.update_layout(xaxis_title="Data", yaxis_title="Índice de risco")
 st.plotly_chart(chart, use_container_width=True)
 
 left, right = st.columns([1.2, 1])
@@ -82,17 +82,16 @@ with right:
     )
     st.code(alert_text)
     st.caption(
-        "Em producao, essa camada poderia usar AWS Lambda + SNS para enviar e-mail ou SMS."
+        "Em produção, essa camada poderia usar AWS Lambda + SNS para enviar e-mail ou SMS."
     )
 
 st.subheader("Arquitetura da POC")
 st.markdown(
     """
-1. Dados climaticos e espaciais entram no pipeline.
-2. O motor calcula um indice de risco agricola.
-3. Um modelo de ML classifica o risco como baixo, medio ou alto.
-4. O dashboard transforma a classificacao em decisao operacional.
-5. Um servico de alerta pode notificar a equipe da fazenda.
+1. Dados climáticos e espaciais entram no pipeline.
+2. O motor calcula um índice de risco agrícola.
+3. Um modelo de ML classifica o risco como baixo, médio ou alto.
+4. O dashboard transforma a classificação em decisão operacional.
+5. Um serviço de alerta pode notificar a equipe da fazenda.
     """
 )
-

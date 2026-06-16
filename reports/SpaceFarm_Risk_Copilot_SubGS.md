@@ -2,41 +2,41 @@
 
 **Aluno:** Cloves Silva Filho  
 **RM:** 567250  
-**Curso:** Inteligencia Artificial - FIAP  
+**Curso:** Inteligência Artificial - FIAP  
 **Atividade:** Substitutiva Global Solution 2026.1  
 
-## 1. Introducao
+## 1. Introdução
 
-A exploracao espacial deixou de ser apenas uma area cientifica distante. Satelites, sensores orbitais e infraestrutura de comunicacao ja apoiam previsao climatica, monitoramento ambiental, agricultura, prevencao de desastres e analise de grandes volumes de dados. A nova economia espacial cria oportunidades para transformar informacoes captadas acima da Terra em decisoes praticas para quem vive e produz nela.
+A exploração espacial deixou de ser apenas uma área científica distante. Satélites, sensores orbitais e infraestrutura de comunicação já apoiam previsão climática, monitoramento ambiental, agricultura, prevenção de desastres e análise de grandes volumes de dados. A nova economia espacial cria oportunidades para transformar informações captadas acima da Terra em decisões práticas para quem vive e produz nela.
 
-Este projeto responde a seguinte pergunta: como a Inteligencia Artificial e as tecnologias digitais podem transformar a nova economia espacial e gerar impacto positivo na Terra?
+Este projeto responde à seguinte pergunta: como a Inteligência Artificial e as tecnologias digitais podem transformar a nova economia espacial e gerar impacto positivo na Terra?
 
 ## 2. Problema
 
-O setor agricola depende diretamente de condicoes climaticas. Temperatura alta, baixa umidade do solo, ausencia de chuva, vento e radiacao solar intensa podem reduzir produtividade e aumentar desperdicios. O problema nao e apenas coletar dados: o desafio e transformar dados em decisao compreensivel e acionavel.
+O setor agrícola depende diretamente de condições climáticas. Temperatura alta, baixa umidade do solo, ausência de chuva, vento e radiação solar intensa podem reduzir produtividade e aumentar desperdícios. O problema não é apenas coletar dados: o desafio é transformar dados em decisão compreensível e acionável.
 
-## 3. Proposta da solucao
+## 3. Proposta da solução
 
-O SpaceFarm Risk Copilot e uma prova de conceito de IA que transforma dados climaticos e espaciais em um indice de risco agricola. A solucao le dados de uma fazenda, calcula um score de risco, classifica esse risco com Machine Learning e recomenda uma acao operacional.
+O SpaceFarm Risk Copilot é uma prova de conceito de IA que transforma dados climáticos e espaciais em um índice de risco agrícola. A solução lê dados de uma fazenda, calcula um score de risco, classifica esse risco com Machine Learning e recomenda uma ação operacional.
 
-Na pratica, o sistema funciona como uma camada de decisao para agricultura inteligente.
+Na prática, o sistema funciona como uma camada de decisão para agricultura inteligente.
 
 ## 4. Arquitetura
 
 Fluxo principal:
 
-1. Dados climaticos/espaciais entram no sistema.
-2. Um pipeline Python organiza as variaveis.
-3. O motor de risco calcula um indice de 0 a 100.
-4. Um modelo de Machine Learning classifica o risco como baixo, medio ou alto.
-5. Um dashboard apresenta graficos e recomendacoes.
-6. Um servico de alerta simulado mostra como a solucao poderia acionar equipes em campo.
+1. Dados climáticos/espaciais entram no sistema.
+2. Um pipeline Python organiza as variáveis.
+3. O motor de risco calcula um índice de 0 a 100.
+4. Um modelo de Machine Learning classifica o risco como baixo, médio ou alto.
+5. Um dashboard apresenta gráficos e recomendações.
+6. Um serviço de alerta simulado mostra como a solução poderia acionar equipes em campo.
 
-Evolucao em nuvem:
+Evolução em nuvem:
 
-- APIs climaticas ou produtos de satelite como fonte de dados.
-- AWS Lambda para processamento periodico.
-- AWS S3 para armazenamento historico.
+- APIs climáticas ou produtos de satélite como fonte de dados.
+- AWS Lambda para processamento periódico.
+- AWS S3 para armazenamento histórico.
 - AWS SNS para alertas por e-mail ou SMS.
 
 ## 5. Desenvolvimento
@@ -45,7 +45,7 @@ O projeto foi desenvolvido em Python com Streamlit, Pandas, Scikit-learn e Plotl
 
 ### Motor de risco
 
-O indice combina temperatura, umidade do solo, deficit de chuva, radiacao solar e vento. Cada variavel recebe um peso proporcional ao impacto esperado sobre a plantacao. A fase da cultura tambem altera a sensibilidade do risco.
+O índice combina temperatura, umidade do solo, déficit de chuva, radiação solar e vento. Cada variável recebe um peso proporcional ao impacto esperado sobre a plantação. A fase da cultura também altera a sensibilidade do risco.
 
 ```python
 weighted_score = (
@@ -59,20 +59,20 @@ weighted_score = (
 
 ### Modelo de Machine Learning
 
-O classificador Random Forest usa as variaveis climaticas para aprender a classificacao de risco. Para uma POC academica, essa abordagem e suficiente porque e interpretavel, robusta e facil de demonstrar.
+O classificador Random Forest usa as variáveis climáticas para aprender a classificação de risco. Para uma POC acadêmica, essa abordagem é suficiente porque é interpretável, robusta e fácil de demonstrar.
 
 ```python
 model = RandomForestClassifier(n_estimators=120, random_state=42, max_depth=4)
 model.fit(data[FEATURES], data["risk_level"])
 ```
 
-### Recomendacao automatica
+### Recomendação automática
 
-O sistema transforma o risco em uma decisao pratica. Exemplo: quando ha risco alto, solo seco e temperatura elevada, a recomendacao e acionar irrigacao prioritaria e enviar alerta tecnico.
+O sistema transforma o risco em uma decisão prática. Exemplo: quando há risco alto, solo seco e temperatura elevada, a recomendação é acionar irrigação prioritária e enviar alerta técnico.
 
 ```python
 if risk_level == "Alto" and soil < 25 and temp >= 34:
-    return "Acionar irrigacao prioritaria e enviar alerta tecnico."
+    return "Acionar irrigação prioritária e enviar alerta técnico."
 ```
 
 ## 6. Resultados esperados
@@ -80,24 +80,24 @@ if risk_level == "Alto" and soil < 25 and temp >= 34:
 A POC entrega:
 
 - Dashboard com indicadores de risco.
-- Grafico de evolucao do indice.
+- Gráfico de evolução do índice.
 - Tabela de dados monitorados.
-- Recomendacao operacional baseada no risco.
+- Recomendação operacional baseada no risco.
 - Alerta simulado para equipe da fazenda.
 
 Um exemplo de leitura gerada pelo sistema:
 
-> Indice alto causado por temperatura elevada, solo seco e ausencia de chuva. Acao recomendada: irrigacao prioritaria e alerta tecnico.
+> Índice alto causado por temperatura elevada, solo seco e ausência de chuva. Ação recomendada: irrigação prioritária e alerta técnico.
 
-## 7. Limitacoes
+## 7. Limitações
 
-O projeto usa um dataset simplificado para manter a execucao viavel dentro do prazo academico. A solucao nao tem a pretensao de substituir uma plataforma agricola profissional. Seu objetivo e demonstrar, de forma funcional, como IA, dados climaticos, arquitetura em nuvem e automacao podem ser combinados para resolver um problema real.
+O projeto usa um dataset simplificado para manter a execução viável dentro do prazo acadêmico. A solução não tem a pretensão de substituir uma plataforma agrícola profissional. Seu objetivo é demonstrar, de forma funcional, como IA, dados climáticos, arquitetura em nuvem e automação podem ser combinados para resolver um problema real.
 
-## 8. Conclusao
+## 8. Conclusão
 
-O SpaceFarm Risk Copilot mostra como a nova economia espacial pode gerar impacto positivo na Terra. Dados que antes ficavam restritos a observacao e analise tecnica podem ser transformados em apoio direto a decisao agricola. Com IA, dashboard e alertas, a tecnologia espacial deixa de ser abstrata e se torna uma ferramenta pratica para sustentabilidade, produtividade e prevencao de perdas.
+O SpaceFarm Risk Copilot mostra como a nova economia espacial pode gerar impacto positivo na Terra. Dados que antes ficavam restritos à observação e análise técnica podem ser transformados em apoio direto à decisão agrícola. Com IA, dashboard e alertas, a tecnologia espacial deixa de ser abstrata e se torna uma ferramenta prática para sustentabilidade, produtividade e prevenção de perdas.
 
 ## 9. Links
 
-- Repositorio GitHub: https://github.com/ClovesSFilho/spacefarm-risk-copilot
-- Video demonstrativo: preencher
+- Repositório GitHub: https://github.com/ClovesSFilho/spacefarm-risk-copilot
+- Vídeo demonstrativo: inserir link do YouTube não listado aqui
