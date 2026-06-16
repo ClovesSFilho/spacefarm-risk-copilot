@@ -99,5 +99,5 @@ O SpaceFarm Risk Copilot mostra como a nova economia espacial pode gerar impacto
 
 ## 9. Links
 
-- Repositorio GitHub: preencher
+- Repositorio GitHub: https://github.com/ClovesSFilho/spacefarm-risk-copilot
 - Video demonstrativo: preencher
